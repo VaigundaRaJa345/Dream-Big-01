@@ -40,7 +40,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-white text-lg">Email Us</h4>
-                  <p className="text-slate-400">hello@dreambig.digital</p>
+                  <p className="text-slate-400">vaigundaraja13off@gmail.com</p>
                   <p className="text-slate-500 text-sm">Response within 24 hours.</p>
                 </div>
               </div>
@@ -51,8 +51,8 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-white text-lg">Call Us</h4>
-                  <p className="text-slate-400">+1 (555) 123-4567</p>
-                  <p className="text-slate-500 text-sm">Mon-Fri, 9am - 6pm PST</p>
+                  <p className="text-slate-400">+91 8248974853</p>
+                  <p className="text-slate-500 text-sm">All day - 5Am to 10pm IST</p>
                 </div>
               </div>
 
@@ -60,11 +60,7 @@ export const Contact: React.FC = () => {
                 <div className="p-3 bg-brand-navy rounded-lg text-brand-accent border border-white/10">
                   <MapPin className="w-6 h-6" />
                 </div>
-                <div>
-                  <h4 className="font-bold text-white text-lg">Visit HQ</h4>
-                  <p className="text-slate-400">101 Innovation Blvd, Suite 400</p>
-                  <p className="text-slate-400">Tech City, CA 94000</p>
-                </div>
+
               </div>
             </div>
           </div>
