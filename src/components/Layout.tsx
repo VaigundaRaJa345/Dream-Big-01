@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Rocket, ChevronRight, Mail, MapPin, Phone, Linkedin, Twitter, Instagram } from 'lucide-react';
+import { Menu, X, Rocket, Mail, MapPin, Phone, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { NavItem } from '../types';
 
 const navItems: NavItem[] = [
@@ -34,9 +34,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     <div className="min-h-screen flex flex-col bg-brand-dark text-slate-200 selection:bg-brand-accent selection:text-brand-dark">
       {/* Navbar */}
       <nav
-        className={`fixed w-full z-50 transition-all duration-300 ${
-          isScrolled ? 'bg-brand-dark/90 backdrop-blur-md border-b border-white/5 py-4' : 'bg-transparent py-6'
-        }`}
+        className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-brand-dark/80 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg' : 'bg-transparent py-6'
+          }`}
       >
         <div className="container mx-auto px-6 flex justify-between items-center">
           <Link to="/" className="flex items-center gap-2 group">
@@ -55,9 +54,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-sm font-medium transition-colors hover:text-brand-accent ${
-                  location.pathname === item.path ? 'text-brand-accent' : 'text-slate-300'
-                }`}
+                className={`text-sm font-medium transition-colors hover:text-brand-accent ${location.pathname === item.path ? 'text-brand-accent' : 'text-slate-300'
+                  }`}
               >
                 {item.label}
               </Link>
@@ -86,9 +84,8 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
               <Link
                 key={item.path}
                 to={item.path}
-                className={`text-lg font-medium ${
-                  location.pathname === item.path ? 'text-brand-accent' : 'text-slate-300'
-                }`}
+                className={`text-lg font-medium ${location.pathname === item.path ? 'text-brand-accent' : 'text-slate-300'
+                  }`}
               >
                 {item.label}
               </Link>

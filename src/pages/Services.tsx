@@ -9,35 +9,40 @@ const servicesList = [
     title: "Web Development",
     desc: "Custom, high-performance web applications tailored to your business logic.",
     tech: ["React/Next.js", "Node.js", "Python", "AWS"],
-    outcome: "40% faster load times, higher conversion rates."
+    outcome: "40% faster load times, higher conversion rates.",
+    image: "/src/assets/service-web.png"
   },
   {
     icon: Smartphone,
     title: "App Development",
     desc: "Native iOS and Android apps that provide seamless user experiences.",
     tech: ["React Native", "Flutter", "Swift", "Kotlin"],
-    outcome: "Top-tier App Store ratings and user retention."
+    outcome: "Top-tier App Store ratings and user retention.",
+    image: "/src/assets/service-app.png"
   },
   {
     icon: Layers,
     title: "Branding & Creative",
     desc: "Forging unique brand identities that resonate with modern audiences.",
     tech: ["UI/UX Design", "Motion Graphics", "3D Modeling"],
-    outcome: "A memorable brand presence that commands authority."
+    outcome: "A memorable brand presence that commands authority.",
+    image: "/src/assets/service-branding.png"
   },
   {
     icon: BarChart2,
     title: "Digital Marketing",
     desc: "ROI-driven campaigns across search, social, and programmatic channels.",
     tech: ["Google Ads", "SEO", "Social Media", "Analytics"],
-    outcome: "Consistent lead generation and predictable growth."
+    outcome: "Consistent lead generation and predictable growth.",
+    image: "/src/assets/service-growth.png"
   },
   {
     icon: Cpu,
     title: "Business Automation",
     desc: "Streamlining operations with custom software and AI integration.",
     tech: ["Gemini API", "Zapier", "Custom ERPs"],
-    outcome: "Reduced operational costs and manual errors."
+    outcome: "Reduced operational costs and manual errors.",
+    image: "/src/assets/service-automation.png"
   }
 ];
 
@@ -63,7 +68,7 @@ export const Services: React.FC = () => {
                 <p className="text-slate-400 text-lg mb-6 leading-relaxed">
                   {service.desc}
                 </p>
-                
+
                 <div className="mb-6">
                   <h4 className="text-sm font-bold text-white uppercase tracking-wider mb-3">Tech Stack</h4>
                   <div className="flex flex-wrap gap-2">
@@ -80,11 +85,22 @@ export const Services: React.FC = () => {
                   <p className="text-slate-300">{service.outcome}</p>
                 </div>
               </div>
-              
+
               <div className="flex-1 w-full">
-                <div className="bg-brand-navy p-8 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-brand-accent/30 transition-colors h-full min-h-[300px] flex items-center justify-center">
-                  <div className="absolute inset-0 bg-gradient-to-br from-brand-accent/5 to-transparent"></div>
-                  <service.icon className="w-32 h-32 text-white/5 group-hover:text-brand-accent/20 transition-all duration-500 transform group-hover:scale-110" />
+                <div className="bg-brand-navy p-1 rounded-2xl border border-white/5 relative overflow-hidden group hover:border-brand-accent/30 transition-colors h-full min-h-[300px] flex items-center justify-center">
+                  <div className="relative w-full h-full min-h-[350px] overflow-hidden rounded-xl">
+                    <div className="absolute inset-0 bg-brand-navy/60 z-10 group-hover:bg-brand-navy/30 transition-colors duration-500"></div>
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="absolute inset-0 w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center z-20">
+                      <div className="bg-brand-navy/20 backdrop-blur-sm p-6 rounded-full border border-white/10 group-hover:border-brand-accent/50 transition-colors">
+                        <service.icon className="w-16 h-16 text-white group-hover:text-brand-accent transition-colors duration-300" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
