@@ -2,6 +2,11 @@ import React from 'react';
 import { Section } from '../components/Section';
 import { Button } from '../components/Button';
 import { Code, Smartphone, BarChart2, Layers, Cpu } from 'lucide-react';
+import ServiceWeb from '../assets/service-web.png';
+import ServiceApp from '../assets/service-app.png';
+import ServiceBranding from '../assets/service-branding.png';
+import ServiceGrowth from '../assets/service-growth.png';
+import ServiceAutomation from '../assets/service-automation.png';
 
 const servicesList = [
   {
@@ -10,7 +15,7 @@ const servicesList = [
     desc: "Custom, high-performance web applications tailored to your business logic.",
     tech: ["React/Next.js", "Node.js", "Python", "AWS"],
     outcome: "40% faster load times, higher conversion rates.",
-    image: "/src/assets/service-web.png"
+    image: ServiceWeb
   },
   {
     icon: Smartphone,
@@ -18,7 +23,7 @@ const servicesList = [
     desc: "Native iOS and Android apps that provide seamless user experiences.",
     tech: ["React Native", "Flutter", "Swift", "Kotlin"],
     outcome: "Top-tier App Store ratings and user retention.",
-    image: "/src/assets/service-app.png"
+    image: ServiceApp
   },
   {
     icon: Layers,
@@ -26,7 +31,7 @@ const servicesList = [
     desc: "Forging unique brand identities that resonate with modern audiences.",
     tech: ["UI/UX Design", "Motion Graphics", "3D Modeling"],
     outcome: "A memorable brand presence that commands authority.",
-    image: "/src/assets/service-branding.png"
+    image: ServiceBranding
   },
   {
     icon: BarChart2,
@@ -34,7 +39,7 @@ const servicesList = [
     desc: "ROI-driven campaigns across search, social, and programmatic channels.",
     tech: ["Google Ads", "SEO", "Social Media", "Analytics"],
     outcome: "Consistent lead generation and predictable growth.",
-    image: "/src/assets/service-growth.png"
+    image: ServiceGrowth
   },
   {
     icon: Cpu,
@@ -42,7 +47,7 @@ const servicesList = [
     desc: "Streamlining operations with custom software and AI integration.",
     tech: ["Gemini API", "Zapier", "Custom ERPs"],
     outcome: "Reduced operational costs and manual errors.",
-    image: "/src/assets/service-automation.png"
+    image: ServiceAutomation
   }
 ];
 

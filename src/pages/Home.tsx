@@ -3,6 +3,10 @@ import { Section } from '../components/Section';
 import { Button } from '../components/Button';
 import { Smartphone, Globe, BarChart, ArrowRight, Zap, Shield, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import ServiceWeb from '../assets/service-web.png';
+import ServiceApp from '../assets/service-app.png';
+import ServiceGrowth from '../assets/service-growth.png';
+import TeamStrategy from '../assets/team-strategy.png';
 
 const stats = [
   { value: '98%', label: 'Client Retention' },
@@ -60,9 +64,9 @@ export const Home: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { icon: Globe, title: 'Web Development', desc: 'Scalable, lightning-fast web applications built on modern stacks.', image: '/src/assets/service-web.png' },
-            { icon: Smartphone, title: 'App Development', desc: 'Native and cross-platform mobile experiences that users love.', image: '/src/assets/service-app.png' },
-            { icon: BarChart, title: 'Growth Strategy', desc: 'Data-driven marketing and SEO to dominate your market sector.', image: '/src/assets/service-growth.png' },
+            { icon: Globe, title: 'Web Development', desc: 'Scalable, lightning-fast web applications built on modern stacks.', image: ServiceWeb },
+            { icon: Smartphone, title: 'App Development', desc: 'Native and cross-platform mobile experiences that users love.', image: ServiceApp },
+            { icon: BarChart, title: 'Growth Strategy', desc: 'Data-driven marketing and SEO to dominate your market sector.', image: ServiceGrowth },
           ].map((service, idx) => (
             <div key={idx} className="group rounded-xl glass-panel hover:border-brand-accent/50 hover:bg-white/10 transition-all duration-300 transform hover:-translate-y-2 overflow-hidden flex flex-col">
               <div className="h-48 overflow-hidden relative">
@@ -114,7 +118,7 @@ export const Home: React.FC = () => {
           <div className="relative">
             <div className="absolute -inset-4 bg-brand-accent/20 rounded-2xl blur-xl"></div>
             <img
-              src="/src/assets/team-strategy.png"
+              src={TeamStrategy}
               alt="Team Strategy"
               className="relative rounded-2xl border border-white/10 shadow-2xl"
             />
