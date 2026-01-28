@@ -9,11 +9,12 @@ interface ButtonProps {
   variant?: 'primary' | 'secondary' | 'outline';
   className?: string;
   icon?: boolean;
+  disabled?: boolean;
 }
 
-export const Button: React.FC<ButtonProps> = ({ children, to, onClick, variant = 'primary', className = '', icon = false }) => {
+export const Button: React.FC<ButtonProps> = ({ children, to, onClick, variant = 'primary', className = '', icon = false, disabled = false }) => {
   const baseStyles = "inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 py-4 px-8 rounded-sm text-sm uppercase";
-  
+
   const variants = {
     primary: "bg-brand-accent text-brand-dark hover:bg-white hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)]",
     secondary: "bg-brand-orange text-white hover:bg-orange-400 hover:scale-105",
@@ -36,7 +37,7 @@ export const Button: React.FC<ButtonProps> = ({ children, to, onClick, variant =
   }
 
   return (
-    <button onClick={onClick} className={`${baseStyles} ${variants[variant]} ${className}`}>
+    <button onClick={onClick} disabled={disabled} className={`${baseStyles} ${variants[variant]} ${className} ${disabled ? 'opacity-50 cursor-not-allowed pointer-events-none' : ''}`}>
       {content}
     </button>
   );
