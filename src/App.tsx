@@ -7,6 +7,8 @@ import { Services } from './pages/Services';
 import { WhyUs } from './pages/WhyUs';
 import { Portfolio } from './pages/Portfolio';
 import { Contact } from './pages/Contact';
+import { Terms } from './pages/Terms';
+import { Privacy } from './pages/Privacy';
 
 const App: React.FC = () => {
   return (
@@ -18,6 +20,8 @@ const App: React.FC = () => {
         <Route path="/why-us" element={<WhyUs />} />
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/terms" element={<Terms />} />
+        <Route path="/privacy" element={<Privacy />} />
       </Routes>
     </Layout>
   );
