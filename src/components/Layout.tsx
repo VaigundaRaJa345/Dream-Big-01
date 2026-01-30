@@ -153,7 +153,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                 </li>
                 <li className="flex items-center gap-3">
                   <Mail className="w-5 h-5 text-brand-accent shrink-0" />
-                  <span>vaigundaraja13off@gmail.com</span>
+                  <span>team@dbpro.digital</span>
                 </li>
               </ul>
             </div>

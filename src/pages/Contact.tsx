@@ -71,7 +71,7 @@ export const Contact: React.FC = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-white text-lg">Email Us</h4>
-                  <p className="text-slate-400">vaigundaraja13off@gmail.com</p>
+                  <p className="text-slate-400">team@dbpro.digital</p>
                   <p className="text-slate-500 text-sm">Response within 24 hours.</p>
                 </div>
               </div>

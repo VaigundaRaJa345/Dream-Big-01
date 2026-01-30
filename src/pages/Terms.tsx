@@ -48,7 +48,7 @@ export const Terms: React.FC = () => {
                         <section>
                             <h2 className="text-2xl font-bold text-white mb-4">6. Contact Us</h2>
                             <p>
-                                If you have any questions about these Terms, please contact us at <a href="mailto:vaigundaraja13off@gmail.com" className="text-brand-accent hover:underline">vaigundaraja13off@gmail.com</a>.
+                                If you have any questions about these Terms, please contact us at <a href="mailto:team@dbpro.digital" className="text-brand-accent hover:underline">team@dbpro.digital</a>.
                             </p>
                         </section>
                     </div>
