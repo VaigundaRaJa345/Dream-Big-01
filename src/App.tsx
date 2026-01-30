@@ -9,6 +9,7 @@ import { Portfolio } from './pages/Portfolio';
 import { Contact } from './pages/Contact';
 import { Terms } from './pages/Terms';
 import { Privacy } from './pages/Privacy';
+import { ErrorPage } from './pages/ErrorPage';
 
 const App: React.FC = () => {
   return (
@@ -22,6 +23,11 @@ const App: React.FC = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/terms" element={<Terms />} />
         <Route path="/privacy" element={<Privacy />} />
+
+        {/* Error Pages */}
+        <Route path="/500" element={<ErrorPage code={500} />} />
+        <Route path="/503" element={<ErrorPage code={503} />} />
+        <Route path="*" element={<ErrorPage code={404} />} />
       </Routes>
     </Layout>
   );
