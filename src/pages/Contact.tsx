@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 import { Section } from '../components/Section';
 import { Button } from '../components/Button';
 import { Mail, MapPin, Phone } from 'lucide-react';
@@ -25,6 +26,31 @@ export const Contact: React.FC = () => {
     setSubmitStatus('idle');
 
     try {
+      // Send email via EmailJS
+      // Replace with your actual IDs in .env file
+      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+      if (serviceId && templateId && publicKey) {
+        await emailjs.send(
+          serviceId,
+          templateId,
+          {
+            from_name: formData.name,
+            from_email: formData.email,
+            phone: formData.phone,
+            type: formData.type,
+            message: formData.message,
+            to_name: 'Admin', // Optional: Customize this
+          },
+          publicKey
+        );
+      } else {
+        console.warn('EmailJS credentials not found in environment variables.');
+      }
+
+      // Existing Google Sheets submission
       // Use text/plain to avoid CORS preflight issues with Google Apps Script
       await fetch('https://script.google.com/macros/s/AKfycbzhHpjrYCQ6jGNc3Ll7RPbuxjGTsAOYgGMYLSjeqf1QfSOOLYsJR5rmh3yN_-g4akA/exec', {
         method: 'POST',
