@@ -26,7 +26,7 @@ export const Contact: React.FC = () => {
 
     try {
       // Use text/plain to avoid CORS preflight issues with Google Apps Script
-      await fetch('https://script.google.com/macros/s/AKfycbw7JDNdpxSUrTe8URRZ4cZIltSA3J6EybUoI82vzE0d34JtY_klSV5Igkvvzw88AGs3/exec', {
+      await fetch('https://script.google.com/macros/s/AKfycbzxtJg-LX77BTeMnLkS0RFNtusHsbK9kJW0mxRqblJwL6FD8thxSbh_DtGJgn1oXRkK/exec', {
         method: 'POST',
         mode: 'no-cors',
         headers: {
