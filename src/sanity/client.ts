@@ -1,9 +1,16 @@
 import { createClient } from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
+const projectId = import.meta.env.VITE_SANITY_PROJECT_ID;
+const dataset = import.meta.env.VITE_SANITY_DATASET || 'production';
+
+if (!projectId) {
+    console.error("Configuration must contain `projectId`. Check your .env file.");
+}
+
 export const client = createClient({
-    projectId: import.meta.env.VITE_SANITY_PROJECT_ID, // You need to create this in .env
-    dataset: import.meta.env.VITE_SANITY_DATASET || 'production',
+    projectId: projectId || 'unspecified-project-id', // Fallback to prevent crash
+    dataset: dataset,
     useCdn: true, // set to `false` to bypass the edge cache
     apiVersion: '2023-05-03', // use current date (YYYY-MM-DD) to target the latest API version
 });
