@@ -9,6 +9,7 @@ const navItems: NavItem[] = [
   { label: 'Services', path: '/services' },
   { label: 'Why Us', path: '/why-us' },
   { label: 'Portfolio', path: '/portfolio' },
+  { label: 'Blog', path: '/blog' },
   { label: 'Contact', path: '/contact' },
 ];
 
