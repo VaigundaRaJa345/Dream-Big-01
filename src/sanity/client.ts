@@ -11,7 +11,7 @@ if (!projectId) {
 export const client = createClient({
     projectId: projectId || 'unspecified-project-id', // Fallback to prevent crash
     dataset: dataset,
-    useCdn: true, // set to `false` to bypass the edge cache
+    useCdn: false, // set to `false` to bypass the edge cache for instant updates
     apiVersion: '2023-05-03', // use current date (YYYY-MM-DD) to target the latest API version
 });
 
