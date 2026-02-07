@@ -23,14 +23,19 @@ export const SEO: React.FC<SEOProps> = ({
     const siteTitle = 'DB Pro | Dream Big Digital Solutions';
     const fullTitle = title === name ? siteTitle : `${title} | ${siteTitle}`;
 
+    // Auto-generate canonical URL if not provided
+    const location = typeof window !== 'undefined' ? window.location : { pathname: '' };
+    const currentPath = location.pathname || '';
+    const canonicalUrl = canonical || `https://www.dbpro.digital${currentPath === '/' ? '' : currentPath}`;
+
     // Organization Schema (JSON-LD)
     const orgSchema = {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "Dream Big Digital Solutions",
         "alternateName": ["DB Pro", "DBPRO", "Dream Big Digital"],
-        "url": "https://dbpro.digital",
-        "logo": "https://dbpro.digital/favicon.png", // Assuming favicon is available there or we should use a proper logo url if available
+        "url": "https://www.dbpro.digital",
+        "logo": "https://www.dbpro.digital/favicon.png",
         "sameAs": [
             // Add social profiles here if available
         ]
@@ -41,7 +46,7 @@ export const SEO: React.FC<SEOProps> = ({
             {/* Standard Metadata */}
             <title>{fullTitle}</title>
             <meta name="description" content={description} />
-            {canonical && <link rel="canonical" href={canonical} />}
+            <link rel="canonical" href={canonicalUrl} />
 
             {/* Open Graph */}
             <meta property="og:type" content={type} />
@@ -49,7 +54,7 @@ export const SEO: React.FC<SEOProps> = ({
             <meta property="og:description" content={description} />
             <meta property="og:image" content={image} />
             <meta property="og:site_name" content={name} />
-            <meta property="og:url" content={canonical || 'https://dbpro.digital'} />
+            <meta property="og:url" content={canonicalUrl} />
 
             {/* Twitter */}
             <meta name="twitter:card" content="summary_large_image" />

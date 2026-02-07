@@ -3,6 +3,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Rocket, Mail, MapPin, Phone, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { NavItem } from '../types';
 
+import { SEO } from './SEO';
+
 const navItems: NavItem[] = [
   { label: 'Home', path: '/' },
   { label: 'About', path: '/about' },
@@ -33,6 +35,10 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) =>
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-dark text-slate-200 selection:bg-brand-accent selection:text-brand-dark">
+      <SEO
+        title="Dream Big Digital Solutions"
+        description="Dream Big Digital Solutions (DB Pro) offers professional web development, SEO, and digital marketing services. Official website: www.dbpro.digital."
+      />
       {/* Navbar */}
       <nav
         className={`fixed w-full z-50 transition-all duration-500 ${isScrolled ? 'bg-brand-dark/80 backdrop-blur-xl border-b border-white/10 py-4 shadow-lg' : 'bg-transparent py-6'
