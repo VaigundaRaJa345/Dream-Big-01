@@ -1,10 +1,15 @@
 import React from 'react';
 import { Section } from '../components/Section';
 import { Target, Lightbulb, Compass, Award } from 'lucide-react';
+import { SEO } from '../components/SEO';
 
 export const About: React.FC = () => {
   return (
     <>
+      <SEO
+        title="About Us | DB Pro"
+        description="Learn about Dream Big Digital Solutions (DB Pro), our vision, mission, and the team driving digital innovation."
+      />
       <div className="pt-20 pb-10 bg-brand-dark relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
         <div className="container mx-auto px-6 text-center relative z-10">
@@ -20,7 +25,7 @@ export const About: React.FC = () => {
           <div className="space-y-6">
             <h2 className="text-3xl font-bold text-white">The Founder's Mindset</h2>
             <p className="text-slate-400 leading-relaxed">
-              DREAM BIG was born from a simple observation: too many businesses limit their potential by accepting "good enough" technology. 
+              Dream Big Digital Solutions (DB Pro) was born from a simple observation: too many businesses limit their potential by accepting "good enough" technology.
               We believe that digital platforms shouldn't just support a business—they should propel it forward.
             </p>
             <p className="text-slate-400 leading-relaxed">
@@ -49,7 +54,7 @@ export const About: React.FC = () => {
         <h2 className="text-3xl font-bold text-center mb-16">Our <span className="text-brand-accent">Journey</span></h2>
         <div className="max-w-4xl mx-auto relative">
           <div className="absolute left-1/2 -translate-x-1/2 w-[2px] h-full bg-white/10"></div>
-          
+
           {[
             { year: '2020', title: 'Inception', desc: 'Founded with a team of 3 elite engineers.' },
             { year: '2022', title: 'Expansion', desc: 'Opened HQ in Tech City, grew to 20+ specialists.' },

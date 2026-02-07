@@ -1,4 +1,5 @@
 import React from 'react';
+import { SEO } from '../components/SEO';
 import { Section } from '../components/Section';
 import { Button } from '../components/Button';
 import { Code, Smartphone, BarChart2, Layers, Cpu } from 'lucide-react';
@@ -54,6 +55,10 @@ const servicesList = [
 export const Services: React.FC = () => {
   return (
     <>
+      <SEO
+        title="Services | DB Pro"
+        description="Explore our digital services: Web Development, App Development, SEO, and Branding. DB Pro delivers custom solutions."
+      />
       <div className="pt-32 pb-16 text-center bg-brand-navy">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">Our <span className="text-brand-accent">Expertise</span></h1>
         <p className="text-slate-400 max-w-2xl mx-auto px-6">

@@ -15,9 +15,15 @@ const stats = [
   { value: '24/7', label: 'Support System' },
 ];
 
+import { SEO } from '../components/SEO';
+
 export const Home: React.FC = () => {
   return (
     <>
+      <SEO
+        title="DB Pro | Web Development & Digital Marketing"
+        description="Dream Big Digital Solutions (DB Pro) offers professional web development, SEO, and digital marketing services to help your business grow."
+      />
       {/* Hero Section */}
       <div className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-dark">
         {/* Animated Background */}
@@ -31,7 +37,7 @@ export const Home: React.FC = () => {
         <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
           <div className="max-w-4xl">
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-brand-accent/30 bg-brand-accent/10 text-brand-secondary text-sm font-semibold tracking-wider animate-fade-in-up">
-              FUTURE-READY DIGITAL AGENCY
+              DB PRO: FUTURE-READY DIGITAL AGENCY
             </div>
             <h1 className="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-8 tracking-tight animate-fade-in-up [animation-delay:200ms]">
               Dream Bigger. <br />
@@ -39,7 +45,7 @@ export const Home: React.FC = () => {
               Scale Faster.
             </h1>
             <p className="text-lg md:text-xl text-slate-400 mb-10 max-w-2xl leading-relaxed animate-fade-in-up [animation-delay:400ms]">
-              We engineer digital ecosystems that transform startups into industry leaders.
+              Dream Big Digital Solutions (DBPRO) engineers digital ecosystems that transform startups into industry leaders.
               Your vision, amplified by our technology.
             </p>
             <div className="flex flex-col md:flex-row gap-4 animate-fade-in-up [animation-delay:600ms]">
