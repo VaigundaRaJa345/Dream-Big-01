@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 @import "tailwindcss";
 
 @theme {
-    --color-brand-dark: #0B1120;
-    --color-brand-navy: #151e32;
-    --color-brand-accent: #6366f1;
-    --color-brand-secondary: #06b6d4;
-    --color-brand-glow: #a855f7;
+    --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+    --color-brand-dark: #FFFFFF;
+    --color-brand-navy: #F8F9FA;
+    --color-brand-accent: #7f65d1;
+    --color-brand-secondary: #5e4bb1;
+    --color-brand-glow: #a78bfa;
+    --color-brand-text: #1a1a1a;
+    --color-brand-muted: #6b7280;
 
     --animate-fade-in-up: fade-in-up 0.8s ease-out forwards;
     --animate-float: float 6s ease-in-out infinite;
@@ -41,12 +46,12 @@
         0%,
         100% {
             opacity: 1;
-            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+            box-shadow: 0 0 20px rgba(127, 101, 209, 0.4);
         }
 
         50% {
             opacity: 0.8;
-            box-shadow: 0 0 40px rgba(99, 102, 241, 0.6);
+            box-shadow: 0 0 40px rgba(127, 101, 209, 0.6);
         }
     }
 
@@ -71,9 +76,13 @@
 
 /* Glassmorphism Utilities */
 .glass-panel {
-    @apply bg-white/5 backdrop-blur-lg border border-white/10 shadow-xl;
+    @apply bg-white/70 backdrop-blur-lg border border-black/5 shadow-lg;
 }
 
 .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-brand-accent via-brand-secondary to-brand-glow;
+}
+
+.section-padding {
+    @apply py-20 md:py-32;
 }

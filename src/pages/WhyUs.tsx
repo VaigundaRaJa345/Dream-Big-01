@@ -6,57 +6,57 @@ export const WhyUs: React.FC = () => {
   const reasons = [
     {
       icon: TrendingUp,
-      title: "Strategy First",
-      desc: "We don't write a line of code until we understand your business model and growth targets."
+      title: "Psychology-Led Strategy",
+      desc: "We dive deep into consumer behavior to build brands that resonate on an emotional level."
     },
     {
       icon: Zap,
-      title: "ROI-Driven Execution",
-      desc: "Every pixel and every feature is designed to convert visitors into customers."
+      title: "Hyper-Performance",
+      desc: "Our campaigns are optimized for maximum conversion, ensuring every dollar spent works for you."
     },
     {
       icon: Users,
-      title: "Transparent Communication",
-      desc: "No jargon. No hidden fees. You get direct access to project managers and developers."
+      title: "Radical Transparency",
+      desc: "Direct access to our creative leads. No account managers, just results-driven experts."
     },
     {
       icon: CheckCircle,
-      title: "Scalable Solutions",
-      desc: "We build architectures that can handle 10 users or 10 million users without breaking."
+      title: "Brand Integrity",
+      desc: "We ensure your brand remains consistent and powerful across every single touchpoint."
     },
     {
       icon: Clock,
-      title: "On-Time Delivery",
-      desc: "We respect your roadmap. Our agile methodology ensures we ship quality on schedule."
+      title: "Agile Creative Process",
+      desc: "Rapid prototyping and execution. We move as fast as the market moves."
     },
     {
       icon: Lock,
-      title: "Startup-Friendly Pricing",
-      desc: "Flexible engagement models designed for high-growth companies managing cash flow."
+      title: "Elite Network",
+      desc: "Leverage our connections with top-tier media outlets and industry influencers."
     }
   ];
 
   return (
     <>
-      <div className="pt-32 pb-16 bg-brand-navy relative">
-         <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-accent/5 to-transparent"></div>
+      <div className="pt-48 pb-24 bg-white relative overflow-hidden">
+         <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 blur-[120px] rounded-full"></div>
         <div className="container mx-auto px-6 relative z-10">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">The <span className="text-brand-accent">DREAM BIG</span> Advantage</h1>
-          <p className="text-xl text-slate-400 max-w-2xl">
-            Partner with a team that cares about your success as much as you do.
+          <h1 className="text-5xl md:text-8xl font-black mb-8 text-brand-text uppercase italic tracking-tighter">The <span className="text-brand-accent">Dream Big</span> Edge</h1>
+          <p className="text-xl md:text-2xl text-brand-muted max-w-2xl font-medium">
+            Partner with a team that values legacy over likeness.
           </p>
         </div>
       </div>
 
-      <Section>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Section className="bg-brand-navy">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
           {reasons.map((reason, i) => (
-            <div key={i} className="bg-brand-dark p-8 rounded-xl border border-white/10 hover:border-brand-accent/50 hover:-translate-y-2 transition-all duration-300 shadow-lg">
-              <div className="w-12 h-12 bg-brand-accent/20 rounded-lg flex items-center justify-center text-brand-accent mb-6">
-                <reason.icon className="w-6 h-6" />
+            <div key={i} className="bg-white p-10 rounded-[2.5rem] shadow-xl shadow-black/5 hover:shadow-brand-accent/20 hover:-translate-y-2 transition-all duration-500 border border-black/5 group">
+              <div className="w-16 h-16 bg-brand-accent text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-brand-accent/30 group-hover:scale-110 transition-transform">
+                <reason.icon className="w-8 h-8" />
               </div>
-              <h3 className="text-xl font-bold text-white mb-4">{reason.title}</h3>
-              <p className="text-slate-400 leading-relaxed">
+              <h3 className="text-2xl font-black text-brand-text mb-4 uppercase italic tracking-tighter">{reason.title}</h3>
+              <p className="text-brand-muted leading-relaxed text-lg">
                 {reason.desc}
               </p>
             </div>

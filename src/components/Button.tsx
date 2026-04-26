@@ -13,12 +13,12 @@ interface ButtonProps {
 }
 
 export const Button: React.FC<ButtonProps> = ({ children, to, onClick, variant = 'primary', className = '', icon = false, disabled = false }) => {
-  const baseStyles = "inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 py-4 px-8 rounded-sm text-sm uppercase";
+  const baseStyles = "inline-flex items-center justify-center font-bold tracking-wide transition-all duration-300 py-4 px-10 rounded-full text-sm uppercase";
 
   const variants = {
-    primary: "bg-brand-accent text-brand-dark hover:bg-white hover:scale-105 shadow-[0_0_20px_rgba(6,182,212,0.3)]",
-    secondary: "bg-brand-orange text-white hover:bg-orange-400 hover:scale-105",
-    outline: "border border-brand-accent text-brand-accent hover:bg-brand-accent/10 hover:text-white",
+    primary: "bg-brand-accent text-white hover:bg-brand-secondary hover:scale-105 shadow-lg shadow-brand-accent/20",
+    secondary: "bg-brand-text text-white hover:bg-brand-accent hover:scale-105 shadow-lg",
+    outline: "border-2 border-brand-accent text-brand-accent hover:bg-brand-accent hover:text-white transition-colors",
   };
 
   const content = (
