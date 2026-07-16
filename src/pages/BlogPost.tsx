@@ -36,7 +36,7 @@ export const BlogPost = () => {
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-brand-dark text-white">
+            <div className="min-h-screen flex items-center justify-center bg-white">
                 <Loader2 className="w-12 h-12 animate-spin text-brand-accent" />
             </div>
         );
@@ -44,9 +44,9 @@ export const BlogPost = () => {
 
     if (!post) {
         return (
-            <div className="min-h-screen flex flex-col items-center justify-center bg-brand-dark text-white">
-                <h2 className="text-3xl font-bold mb-4">Post not found</h2>
-                <Link to="/blog" className="text-brand-accent hover:underline flex items-center">
+            <div className="min-h-screen flex flex-col items-center justify-center bg-white text-brand-text">
+                <h2 className="text-3xl font-black mb-6 uppercase italic tracking-tighter">Post not found</h2>
+                <Link to="/blog" className="text-brand-accent hover:text-brand-secondary font-black uppercase tracking-widest text-xs flex items-center">
                     <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
                 </Link>
             </div>
@@ -54,53 +54,51 @@ export const BlogPost = () => {
     }
 
     return (
-        <div className="min-h-screen bg-brand-dark text-slate-200">
-            {/* Reading Progress / Sticky Header could go here */}
-
-            <article>
-                {/* Hero Section */}
-                <div className="relative h-[60vh] min-h-[400px] w-full overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/50 to-transparent z-10" />
-                    {post.mainImage ? (
-                        <img
-                            src={urlFor(post.mainImage).width(1200).height(800).url()}
-                            alt={post.title}
-                            className="w-full h-full object-cover"
-                        />
-                    ) : (
-                        <div className="w-full h-full bg-gray-800" />
-                    )}
-
-                    <div className="absolute bottom-0 left-0 w-full z-20 pb-12 px-6">
-                        <div className="container mx-auto max-w-4xl">
-                            <Link to="/blog" className="inline-flex items-center text-sm font-semibold text-brand-accent hover:text-white transition-colors mb-6">
-                                <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
-                            </Link>
-                            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-                                {post.title}
-                            </h1>
-                            <div className="flex flex-wrap items-center gap-6 text-sm text-gray-300">
-                                <div className="flex items-center">
-                                    <Calendar className="w-4 h-4 mr-2 text-brand-accent" />
-                                    {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
-                                </div>
-                                <div className="flex items-center">
-                                    <User className="w-4 h-4 mr-2 text-brand-accent" />
-                                    <span>Team Dream Big</span>
-                                </div>
-                                <div className="flex items-center">
-                                    <Clock className="w-4 h-4 mr-2 text-brand-accent" />
-                                    <span>5 min read</span>
-                                </div>
-                            </div>
+        <div className="min-h-screen bg-white text-brand-text">
+            <article className="pt-48 pb-32">
+                {/* Header Section */}
+                <div className="container mx-auto px-6 max-w-4xl mb-12">
+                    <Link to="/blog" className="inline-flex items-center text-xs font-black text-brand-accent hover:text-brand-secondary transition-colors uppercase tracking-widest mb-8">
+                        <ArrowLeft className="w-4 h-4 mr-2" /> Back to Blog
+                    </Link>
+                    <h1 className="text-4xl md:text-6xl font-black text-brand-text mb-8 leading-none uppercase italic tracking-tighter">
+                        {post.title}
+                    </h1>
+                    <div className="flex flex-wrap items-center gap-6 text-xs font-bold text-brand-muted uppercase tracking-widest">
+                        <div className="flex items-center">
+                            <Calendar className="w-4 h-4 mr-2 text-brand-accent" />
+                            {new Date(post.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                        </div>
+                        <div className="flex items-center">
+                            <User className="w-4 h-4 mr-2 text-brand-accent" />
+                            <span>Team Dream Big</span>
+                        </div>
+                        <div className="flex items-center">
+                            <Clock className="w-4 h-4 mr-2 text-brand-accent" />
+                            <span>5 min read</span>
                         </div>
                     </div>
                 </div>
 
-                {/* Content */}
-                <div className="container mx-auto px-6 py-16">
+                {/* Main Feature Image */}
+                <div className="container mx-auto px-6 max-w-5xl mb-16">
+                    <div className="aspect-[16/9] md:aspect-[21/9] rounded-[3rem] overflow-hidden border border-black/5 shadow-2xl">
+                        {post.mainImage ? (
+                            <img
+                                src={urlFor(post.mainImage).width(1200).height(600).url()}
+                                alt={post.title}
+                                className="w-full h-full object-cover"
+                            />
+                        ) : (
+                            <div className="w-full h-full bg-brand-navy" />
+                        )}
+                    </div>
+                </div>
+
+                {/* Content Section */}
+                <div className="container mx-auto px-6">
                     <div className="max-w-3xl mx-auto">
-                        <div className="prose prose-lg prose-invert prose-headings:text-white prose-a:text-brand-accent prose-a:no-underline hover:prose-a:underline prose-img:rounded-2xl prose-strong:text-white">
+                        <div className="prose prose-lg prose-slate prose-headings:font-black prose-headings:uppercase prose-headings:italic prose-headings:tracking-tighter prose-headings:text-brand-text prose-a:text-brand-accent prose-a:font-black hover:prose-a:text-brand-secondary prose-img:rounded-[2rem] prose-strong:text-brand-text prose-strong:font-black text-brand-text leading-relaxed">
                             <PortableText
                                 value={post.body}
                                 components={{
@@ -110,14 +108,14 @@ export const BlogPost = () => {
                                                 return null;
                                             }
                                             return (
-                                                <figure className="my-10">
+                                                <figure className="my-12">
                                                     <img
                                                         src={urlFor(value).width(800).fit('max').auto('format').url()}
                                                         alt={value.alt || ' '}
-                                                        className="w-full rounded-2xl shadow-xl border border-white/5"
+                                                        className="w-full rounded-[2rem] shadow-xl border border-black/5"
                                                     />
                                                     {value.caption && (
-                                                        <figcaption className="text-center text-sm text-gray-500 mt-3 italic">
+                                                        <figcaption className="text-center text-xs font-bold text-brand-muted mt-4 italic uppercase tracking-wider">
                                                             {value.caption}
                                                         </figcaption>
                                                     )}
@@ -126,21 +124,21 @@ export const BlogPost = () => {
                                         },
                                     },
                                     block: {
-                                        h2: ({ children }) => <h2 className="text-3xl font-bold mt-12 mb-6 text-white pb-2 border-b border-white/10">{children}</h2>,
-                                        h3: ({ children }) => <h3 className="text-2xl font-bold mt-10 mb-4 text-white">{children}</h3>,
-                                        blockquote: ({ children }) => <blockquote className="border-l-4 border-brand-accent pl-6 py-2 my-8 italic text-xl text-gray-300 bg-white/5 rounded-r-lg">{children}</blockquote>,
+                                        h2: ({ children }) => <h2 className="text-3xl font-black mt-16 mb-6 text-brand-text pb-4 border-b border-black/5 uppercase italic tracking-tighter leading-none">{children}</h2>,
+                                        h3: ({ children }) => <h3 className="text-2xl font-black mt-12 mb-4 text-brand-text uppercase italic tracking-tighter leading-none">{children}</h3>,
+                                        blockquote: ({ children }) => <blockquote className="border-l-4 border-brand-accent pl-8 py-4 my-10 italic text-xl font-bold text-brand-text bg-brand-navy rounded-r-[1.5rem] shadow-sm">{children}</blockquote>,
                                     }
                                 }}
                             />
                         </div>
 
                         {/* Footer / Share */}
-                        <div className="mt-16 pt-8 border-t border-white/10 flex justify-between items-center">
-                            <div className="text-gray-400 font-medium">
+                        <div className="mt-20 pt-10 border-t border-black/5 flex justify-between items-center">
+                            <div className="text-brand-muted text-xs font-black uppercase tracking-widest">
                                 Share this article
                             </div>
                             <div className="flex gap-4">
-                                <button className="p-2 rounded-full bg-white/5 hover:bg-brand-accent hover:text-brand-dark transition-all">
+                                <button className="p-3 rounded-full border border-black/5 text-brand-text hover:bg-brand-accent hover:text-white hover:border-brand-accent transition-all shadow-sm">
                                     <Share2 className="w-5 h-5" />
                                 </button>
                             </div>
